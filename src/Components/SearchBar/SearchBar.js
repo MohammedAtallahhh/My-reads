@@ -1,9 +1,15 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 import { search } from "../../BooksAPI";
 import Book from "../Book/Book";
 import "./SearchBar.css";
 
 export default class SearchBar extends Component {
+  static types = {
+    books: PropTypes.array.isRequired,
+    changeShelf: PropTypes.func.isRequired,
+  };
+
   state = {
     books: [],
     notFound: false,

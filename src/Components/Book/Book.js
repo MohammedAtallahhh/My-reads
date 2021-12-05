@@ -1,8 +1,17 @@
 import React, { Component } from "react";
+import PropTypes from 'prop-types';
 import ShelfChanger from "../ShelfChanger/ShelfChanger";
 import "./Book.css";
+import NoImage from "./no-image.png";
 
 export default class Book extends Component {
+
+  static types = {
+    book: PropTypes.object.isRequired,
+    books: PropTypes.array.isRequired,
+    changeShelf: PropTypes.func.isRequired
+  }
+  
   render() {
     const { title, authors, publisher, imageLinks } = this.props.book;
     // console.log(this.props.book);
@@ -14,7 +23,12 @@ export default class Book extends Component {
             style={{
               width: 128,
               height: 193,
-              backgroundImage: `url(${imageLinks.smallThumbnail})`,
+              // Checking if there is an imageLink to show
+              background: `url(${
+                imageLinks && imageLinks.smallThumbnail
+                  ? imageLinks.smallThumbnail
+                  : NoImage
+              }) center / cover`,
             }}
           />
           <ShelfChanger

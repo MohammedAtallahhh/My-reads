@@ -14,7 +14,6 @@ export default class App extends Component {
 
   async componentDidMount() {
     const books = await getAll();
-    console.log(books);
     this.setState({ books });
   }
 
@@ -34,7 +33,10 @@ export default class App extends Component {
     return (
       <div className="app">
         {this.state.showSearchPage ? (
-          <SearchBar changeCategory={this.changeCategory} books={books} changeBookShelf={this.changeBookShelf}/>
+          <SearchBar
+            books={books}
+            changeBookShelf={this.changeBookShelf}
+          />
         ) : (
           <div className="list-books">
             <div className="list-books-title">
