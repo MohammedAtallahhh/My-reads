@@ -5,10 +5,10 @@ import "./Book.css";
 import NoImage from "./no-image.png";
 
 export default class Book extends Component {
-  static types = {
+  static propTypes = {
     book: PropTypes.object.isRequired,
     books: PropTypes.array.isRequired,
-    changeShelf: PropTypes.func.isRequired,
+    changeBookShelf: PropTypes.func.isRequired,
   };
 
   render() {

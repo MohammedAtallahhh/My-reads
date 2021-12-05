@@ -5,9 +5,9 @@ import Book from "../Book/Book";
 import "./SearchBar.css";
 
 export default class SearchBar extends Component {
-  static types = {
+  static propTypes = {
     books: PropTypes.array.isRequired,
-    changeShelf: PropTypes.func.isRequired,
+    changeBookShelf: PropTypes.func.isRequired,
   };
 
   state = {

@@ -2,10 +2,10 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 
 export default class ShelfChanger extends Component {
-  static types = {
+  static propTypes = {
     book: PropTypes.object.isRequired,
     books: PropTypes.array.isRequired,
-    changeShelf: PropTypes.func.isRequired,
+    changeBookShelf: PropTypes.func.isRequired,
   };
 
   changeShelf = (e) =>
