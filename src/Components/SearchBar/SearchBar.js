@@ -19,10 +19,13 @@ export default class SearchBar extends Component {
   searchInput = async (e) => {
     // Ensuring that input is not empty
     if (e.target.value) {
-      // Checking ig there is an error
-      const books = await search(e.target.value);
+      const books = await search(e.target.value.trim());
+
+      // Check if there in no result
       if (books.error) this.setState({ books: [], notFound: true });
       else this.setState({ books, notFound: false });
+
+      // If input is empty
     } else {
       this.setState({ books: [] });
     }

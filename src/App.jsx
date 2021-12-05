@@ -26,6 +26,8 @@ export default class App extends Component {
         ...prevState,
       }));
     });
+
+    console.log(book);
   };
 
   render() {
@@ -33,10 +35,7 @@ export default class App extends Component {
     return (
       <div className="app">
         {this.state.showSearchPage ? (
-          <SearchBar
-            books={books}
-            changeBookShelf={this.changeBookShelf}
-          />
+          <SearchBar books={books} changeBookShelf={this.changeBookShelf} />
         ) : (
           <div className="list-books">
             <div className="list-books-title">

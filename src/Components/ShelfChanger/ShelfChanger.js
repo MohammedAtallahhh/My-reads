@@ -16,11 +16,11 @@ export default class ShelfChanger extends Component {
 
     let shelf = "none";
 
-    books.forEach((b) => {
+    for (let b of books) {
       if (b.id === book.id) {
-        shelf = book.shelf;
+        shelf = b.shelf;
       }
-    });
+    }
 
     return (
       <div className="book-shelf-changer">
